@@ -1,0 +1,72 @@
+<h2 mat-dialog-title>Add User</h2>
+<mat-dialog-content class="mat-typography">
+  <!-- <h3>What is Angular?</h3>
+
+  <p>Angular is a platform that makes it easy to build applications with the web. Angular
+    combines declarative templates, dependency injection, end to end tooling, and integrated
+    best practices to solve development challenges. Angular empowers developers to build
+    applications that live on the web, mobile, or the desktop</p> -->
+    <div class="one-row">
+        <!-- //TODO für alle Felder  Placeholder -->
+        <p >
+            <mat-form-field appearance="outline" class="mt-1">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Placeholder">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Please enter your First Name</mat-hint> -->
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline" class="mt-1">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Placeholder">
+                <!-- <mat-hint>Please enter your Last Name</mat-hint> -->
+            </mat-form-field>
+        </p>
+
+    </div>
+
+    <div>
+        <p>
+            <mat-form-field appearance="outline" class="mt-1 full-with">
+                <mat-label>Street & House No.</mat-label>
+                <input matInput placeholder="Placeholder">
+                <!-- <mat-hint>Please enter your Street</mat-hint> -->
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div class="one-row">
+        <p>
+            <mat-form-field appearance="outline" class="mt-1">
+                <mat-label>Zip Code</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        </p>
+         <p>
+            <mat-form-field appearance="outline" class="mt-1">
+                <mat-label>City</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        </p>
+    </div>
+
+    <div>
+          <p>
+            <mat-form-field appearance="outline" class="mt-1 full-with">
+                <mat-label>Birth Date</mat-label>
+                <input matInput placeholder="Placeholder" [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                <!-- <mat-hint>Please enter your Birthday</mat-hint> -->
+            </mat-form-field>
+        </p>
+    </div>
+
+ 
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>
