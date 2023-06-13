@@ -4,8 +4,8 @@
   <mat-drawer #drawer class="sidenav" [opened]="!isMobileView" [mode]="isMobileView ? 'over' : 'side'">
     <div class="logo-container">Platz für Logo </div>
     <ul class="icon-menu">
-      <li > <mat-icon>fact_check</mat-icon>Dashboard</li>
-      <li > <mat-icon>perm_identity</mat-icon>User</li>
+      <li routerLink="/" (click)="onLinkClicked()"> <mat-icon>fact_check</mat-icon>Dashboard</li>
+      <li routerLink="/user" (click)="onLinkClicked()"> <mat-icon>perm_identity</mat-icon>User</li>
       <li >Platzhalter</li>
     </ul>
 
@@ -19,6 +19,9 @@
 
       </mat-toolbar>
     </header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
   </div>
 
 </mat-drawer-container>

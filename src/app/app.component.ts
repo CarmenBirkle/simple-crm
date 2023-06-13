@@ -1,36 +1,46 @@
-import { AfterViewInit, Component, HostListener, ViewChild } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  AfterViewInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { MatSidenavContainer } from '@angular/material/sidenav';
-
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements AfterViewInit {
-  @ViewChild(MatSidenavContainer) sidenavContainer!: MatSidenavContainer;
+export class AppComponent {
+  title = 'simple-crm';
 
   @ViewChild('drawer') drawer!: MatDrawer;
-  isMobileView = false;
 
-  @HostListener('window:resize', ['$event'])
-  onResize($event: any) {
-    this.checkViewport();
-  }
+  isMobileView = true;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.checkViewport();
-    this.sidenavContainer.scrollable.elementScrolled().subscribe(() => {
-      // React to scrolling
+    this.cdr.detectChanges();
+
+    window.addEventListener('resize', () => {
+      this.checkViewport();
+      this.cdr.detectChanges();
     });
   }
 
   checkViewport() {
-    this.isMobileView = window.innerWidth <= 768; // TODO Adjust the breakpoint
+    this.isMobileView = window.innerWidth <= 768; // TODO Adjust the breakpoint as needed
 
     // Set the attributes based on viewport
     this.drawer.opened = !this.isMobileView;
     this.drawer.mode = this.isMobileView ? 'over' : 'side';
+  }
+
+  onLinkClicked() {
+    if (this.isMobileView) {
+      this.drawer.close(); // Close the navbar after clicking a link in the mobile view
+    }
   }
 }
