@@ -22,3 +22,10 @@ box-sizing: border-box;}
 .full-with{
     width: 100%;
 }
+
+.pin-right-upper-corner{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}

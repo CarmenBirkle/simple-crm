@@ -33,9 +33,8 @@ export class UserDetailComponent implements OnInit, OnDestroy {
     const unsubscribe = onSnapshot(docRef, (docSnap) => {
       this.user = new User(docSnap.data());
       //TODO entfernen
-       console.log(this.user);
+      console.log(this.user);
     });
-   
   }
 
   ngOnDestroy() {
@@ -43,4 +42,8 @@ export class UserDetailComponent implements OnInit, OnDestroy {
       this.unsubscribe();
     }
   }
+
+  editAddress() {}
+
+  editUser() {}
 }
