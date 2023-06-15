@@ -1,0 +1,36 @@
+// import globale style
+@import "src/_globals.scss";
+
+mat-card-content{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;  
+}
+
+.detail-user-header{
+    background-color: $background-primary;
+    color: $color-primary;
+    min-height:15rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    
+    img{
+        border-radius: 50%;
+        height:6rem;
+        border: 3px solid $accent-secondary;
+        object-fit: cover;    
+    }
+}
+
+.user-details{
+
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+h2{
+    margin-bottom: 0.2rem;
+}
+
+
