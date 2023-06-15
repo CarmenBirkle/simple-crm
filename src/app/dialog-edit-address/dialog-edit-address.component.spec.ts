@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogEditAdressComponent } from './dialog-edit-adress.component';
+import { DialogEditAdressComponent } from './dialog-edit-address.component';
 
 describe('DialogEditAdressComponent', () => {
   let component: DialogEditAdressComponent;
