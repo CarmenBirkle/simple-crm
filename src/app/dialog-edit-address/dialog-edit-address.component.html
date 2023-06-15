@@ -1,5 +1,5 @@
 <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
-<h2 mat-dialog-title>Add User</h2>
+<h2 mat-dialog-title>Edit Address</h2>
 <mat-dialog-content class="mat-typography">
     
 
@@ -8,7 +8,6 @@
             <mat-form-field appearance="outline" class="mt-1 full-with">
                 <mat-label>Street & House No.</mat-label>
                 <input [disabled]="loading" [(ngModel)]="user.street"  matInput placeholder="Placeholder">
-                <!-- <mat-hint>Please enter your Street</mat-hint> -->
             </mat-form-field>
         </p>
     </div>
@@ -29,8 +28,6 @@
     </div>
     <!-- TODO Reihnenfolge, required, html validation und placeholder -->
     
-
- 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button [disabled]="loading" mat-button mat-dialog-close>Cancel</button>

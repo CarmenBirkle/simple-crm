@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { User } from 'src/models/user.class';
+import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
+import { Firestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-dialog-edit-address',
@@ -11,5 +13,15 @@ export class DialogEditAddressComponent {
   user!: User;
   userId!: string;
 
-  saveUser() {}
+  constructor(private firestore: Firestore) {}
+
+
+  async saveUser() {
+    this.loading = true;
+    const userDoc = doc(this.firestore, 'users', this.userId);
+    updateDoc(userDoc, this.user.toJson()).then(() => {
+      this.loading = false;
+      // this.dialogRef.close();
+    });
+  }
 }
