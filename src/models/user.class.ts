@@ -14,4 +14,15 @@ export class User{
         this.zipCode = obj ? obj.zipCode : null;
         this.city = obj ? obj.city : null;
     }
+
+    public toJson(){
+        return{
+                firstName: this.firstName,
+                lastName: this.lastName,
+                street: this.street,
+                birthDate: this.birthDate,
+                city: this.city,
+                zipCode: this.zipCode,
+        }
+    }
 }
