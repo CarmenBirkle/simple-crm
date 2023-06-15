@@ -1,4 +1,4 @@
-<mat-progress-bar *ng-if="loading" mode="indeterminate"></mat-progress-bar>
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 <h2 mat-dialog-title>Add User</h2>
 <mat-dialog-content class="mat-typography">
   <!-- <h3>What is Angular?</h3>
@@ -49,6 +49,16 @@
             <mat-form-field appearance="outline" class="mt-1">
                 <mat-label>City</mat-label>
                 <input [disabled]="loading" [(ngModel)]="user.city" matInput placeholder="Placeholder">
+            </mat-form-field>
+        </p>
+    </div>
+    <!-- TODO Reihnenfolge, required, html validation und placeholder -->
+    <div>
+        <p>
+            <mat-form-field appearance="outline" class="mt-1 full-with">
+                <mat-label>Email</mat-label>
+                <input [disabled]="loading" [(ngModel)]="user.email"  matInput placeholder="Placeholder">
+                <!-- <mat-hint>Please enter your Street</mat-hint> -->
             </mat-form-field>
         </p>
     </div>
